@@ -69,9 +69,29 @@ class Human {
     var name: String
     var age: Int
     
+    // static method
     init(name: String = "", age: Int = 0) {
         self.name = name
         self.age = age
+    }
+    
+    // public method
+    func doSmth() {
+        print("Human \(name) plays football")
+    }
+    
+    // static method
+    static func eat() {
+        print("Human eats")
+    }
+    
+    // private method
+    private func sleeps() {
+        print("Human \(name) sleeps")
+    }
+    
+    func canSleep() {
+        sleeps()
     }
 }
 
@@ -80,5 +100,8 @@ let personOne = Human()
 
 person.name
 person.age
+person.doSmth()
+Human.eat()
+person.canSleep()
 
 personOne.name

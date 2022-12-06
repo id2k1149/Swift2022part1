@@ -24,5 +24,6 @@ print("Triangle area is \(triangleArea)")
 let trianglePerimeter = triangleSideAC + triangleSideCB + triangleSideAB
 print("Triangle perimeter is \(trianglePerimeter)")
 
-
+//Задание 3
+//К реализации этого задания ни каких замечаний у меня нет. Все сделано хорошо и правильно, молодец!
 //: [Ранее: Задание 2](@previous) | Задание 3 из 3

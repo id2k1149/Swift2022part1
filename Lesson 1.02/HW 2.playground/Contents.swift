@@ -15,9 +15,11 @@ let numberPi: Float = 3.14
 let someNumber: Float = 42.0
 
 let sumResult = Double(numberPi) + Double(someNumber)
+//let sumResult = Double(numberPi + someNumber)
+
 print("Sum of \(numberPi) and \(someNumber) is \(sumResult)\n")
 
- 
+
 /*:
  ## Задание 2
  2.1 Создайте свойство `numberOne` и присвойте ему любое положительное целочисленное значение
@@ -100,6 +102,6 @@ print("I was born in the \(quater) quater of the year.\n")
  */
 let number = 1.0
 let sinOfNumber = sin(number)
-let roundSin = Double(Int(sinOfNumber * 1000)) / 1000
-//let roundOfSin = round(sinOfNumber * 1000) / 1000
-print("sin(\(Int(number))) = \(roundSin)")
+//let roundOfSin = Double(Int(sinOfNumber * 1000)) / 1000
+let roundOfSin = round(sinOfNumber * 1000) / 1000
+print("sin(\(Int(number))) = \(roundOfSin)")

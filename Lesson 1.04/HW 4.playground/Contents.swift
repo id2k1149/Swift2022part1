@@ -10,15 +10,15 @@ import UIKit
 
 let period = 5
 let rate = 11.0
-let deposit = 500_000.0
+var deposit = 500_000.0
 var profit = 0.0
 
 for _ in 1...period {
     profit += round((deposit + profit) * rate) / 100
 }
 
-let finalDeposit = round((deposit + profit) * 100) / 100
-print("Сумма вклада через \(period) лет увеличится на \(profit) и составит \(finalDeposit) рублей\n")
+deposit = round((deposit + profit) * 100) / 100
+print("Сумма вклада через \(period) лет увеличится на \(profit) и составит \(deposit) рублей\n")
 
 
 

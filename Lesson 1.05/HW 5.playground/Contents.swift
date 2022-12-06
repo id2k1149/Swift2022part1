@@ -87,6 +87,17 @@ func makeSortedArray(from x: Int, to y: Int) -> [Int] {
     return array
 }
 
+// shuffled
+func makeShuffledArray(from x: Int, to y: Int) -> [Int] {
+    var array: [Int] = []
+    
+    for number in x...y {
+        array.append(number)
+    }
+
+    return array.shuffled()
+}
+
 func makeUnsortedArray(from x: Int, to y: Int) -> [Int] {
     var array: [Int] = []
     let arrayCount = y - x + 1

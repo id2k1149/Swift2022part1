@@ -26,16 +26,25 @@ import UIKit
  */
 
 class Orange {
-    var color: String = ""
-    var taste: String = ""
+    var color: String
+    var taste: String
     let radius: Double
     
+    //getter
     var orangeVolume: Double {
-        round(4 / 3 * Double.pi * pow(radius, 3) * 100) / 100
+        calculateOrangeVolume()
     }
     
-    init(radius: Double) {
+    // 1 init only
+    init(color: String = "", taste: String = "", radius: Double) {
+        self.color = color
+        self.taste = taste
         self.radius = radius
+    }
+    
+//    Инкапсуляция — это важный принцип ООП, который нужно соблюдать. Данный метод следовало сделать приватным, так как он используется для реализации внутренней логики класса. Для того, что бы узнать объем апельсина у тебя есть публичный геттер
+    private func calculateOrangeVolume() -> Double {
+        round(4 / 3 * Double.pi * pow(radius, 3) * 100) / 100
     }
 }
 
@@ -81,7 +90,7 @@ var employees: [Employee] = []
 
 for _ in 1...10 {
     let employee = Employee(salary: Int.random(in: 1000...2000),
-                            // i dont know why is "??" at the end (fix by Xcode)
+                            // так ты извлекаешь опциональное значение, если в свойстве вернется nil, то компилятор просто возьмет значение по умолчанию, то, которое ты определишь после ??
                             name: names.randomElement() ?? "n/a",
                             surname: surnames.randomElement() ?? "n/a")
     employees.append(employee)
@@ -98,10 +107,18 @@ for employee in employees {
 
 var employeesWithEvenSalary: [Employee] = []
 
+for employee in employees {
+    if employee.salary.isMultiple(of: 2) {
+        employeesWithEvenSalary.append(employee)
+    }
+}
+
 print("\n\nList of employees with even salary:\n")
 
+employeesWithEvenSalary = employees.filter { $0.salary.isMultiple(of: 2) }
+
 for employee in employees {
-    if (employee.salary % 2 == 0) {
+    if employee.salary % 2 == 0 {
         employeesWithEvenSalary.append(employee)
         print("\(employee.name) \(employee.surname)'s salary is $\(employee.salary)")
     }
